@@ -2,9 +2,6 @@
   "name": "stream-vibe",
   "version": "0.0.0",
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
