@@ -23,7 +23,6 @@
     ]
   },
   "private": true,
-  "packageManager": "npm@11.10.0",
   "dependencies": {
     "@abacritt/angularx-social-login": "^2.6.0",
     "@angular/common": "^21.1.0",
