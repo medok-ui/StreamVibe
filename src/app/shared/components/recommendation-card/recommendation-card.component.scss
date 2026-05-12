@@ -1,0 +1,139 @@
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 20px;
+  width: 359px;
+  height: 500px;
+
+  background: #1a1a1a;
+
+  &:hover {
+    background: var(--black-15);
+    border-color: var(--black-20);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+    .recommendation-img {
+      filter: grayscale(0) brightness(1.1);
+      transform: scale(1.05);
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: all 0.1s ease;
+  }
+}
+
+.new-release-cover,
+.recommendation-img {
+  border-radius: 12px;
+  width: 319px;
+  height: 404px;
+}
+
+.recommendation-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommendation-time {
+  border: 1px solid #262626;
+  border-radius: 51px;
+  padding: 6px 10px 6px 6px;
+  height: 36px;
+  background: #141414;
+
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #999;
+}
+
+.recommendation-rating {
+  border: 1px solid #262626;
+  border-radius: 51px;
+  padding: 6px 10px;
+  height: 33px;
+  background: #141414;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #999;
+}
+
+@media (max-width: 1200px) {
+  .recommendation-card {
+    width: 300px;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .recommendation-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendation-card {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .recommendation-img {
+    height: 380px;
+  }
+
+  .recommendation-info {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .recommendation-time,
+  .recommendation-rating {
+    font-size: 14px;
+    padding: 4px 10px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommendation-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .recommendation-img {
+    height: 280px;
+    border-radius: 8px;
+  }
+
+  .recommendation-time,
+  .recommendation-rating {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .recommendation-rating img {
+    width: 14px;
+  }
+}

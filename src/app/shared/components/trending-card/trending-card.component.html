@@ -1,0 +1,13 @@
+<div [routerLink]="['/movies/shows', movie().id]" class="trending-card">
+  <div class="trending-card-grid">
+    <img class="trending-card-img" [src]="movie().poster" [alt]="movie().title" />
+    <div class="trending-card-info">
+      <div class="trending-card-time">
+        <img src="/assets/svg/time.svg" alt="time svg" />{{ movie().duration }}
+      </div>
+      <div class="trending-card-view">
+        <img src="/assets/svg/eye.svg" alt="eye svg" />{{ movie().rating_count }}
+      </div>
+    </div>
+  </div>
+</div>

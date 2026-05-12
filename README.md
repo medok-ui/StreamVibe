@@ -1,59 +1,133 @@
 # StreamVibe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+**StreamVibe** is a Netflix-inspired streaming platform landing page built with Angular 21. It features a full UI for browsing movies and TV shows, subscription plan selection, authentication (email/password), and server-side rendering.
 
-## Development server
+---
 
-To start a local development server, run:
+## ⚠️ Known Issues
+
+> **Google Sign-In is currently non-functional.**
+> The "Sign in with Google" button is present in the UI but the OAuth flow is not yet configured. Firebase Google Auth provider setup and proper OAuth credentials are still pending. Use email/password registration and login instead.
+
+---
+
+## Features
+
+- 🎬 **Home page** — hero section, trending movies/shows, new releases, genre categories, and user reviews
+- 🎥 **Movies & Shows pages** — browsable content sections with recommendation and trending cards
+- 💳 **Subscription page** — Basic / Standard / Premium pricing table with feature comparison
+- 🔐 **Authentication** — email/password register & login powered by Firebase Auth
+- 📱 **Multi-device section** — highlights compatibility across phone, tablet, laptop, TV, and more
+- ❓ **FAQ & Support pages**
+- 🌐 **SSR (Server-Side Rendering)** — via Angular Universal / `@angular/ssr`
+
+---
+
+## Tech Stack
+
+| Layer        | Technology                                                      |
+| ------------ | --------------------------------------------------------------- |
+| Framework    | Angular 21                                                      |
+| Language     | TypeScript 5.9                                                  |
+| Styling      | SCSS                                                            |
+| Auth         | Firebase Auth + `@angular/fire`                                 |
+| Social Login | `@abacritt/angularx-social-login` (Google — not yet configured) |
+| SSR          | `@angular/ssr` + Express 5                                      |
+| Linting      | ESLint + `@typescript-eslint`                                   |
+| Formatting   | Prettier                                                        |
+| Testing      | Vitest                                                          |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- npm 11+
+- Angular CLI 21
+
+### Installation
+
+```bash
+git clone https://github.com/medok-ui/StreamVibe.git
+cd stream-vibe
+npm install
+```
+
+### Environment Setup
+
+Create `src/environments/environment.ts` with your Firebase config:
+
+```ts
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'YOUR_API_KEY',
+    authDomain: 'YOUR_AUTH_DOMAIN',
+    projectId: 'YOUR_PROJECT_ID',
+    storageBucket: 'YOUR_STORAGE_BUCKET',
+    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+    appId: 'YOUR_APP_ID',
+  },
+};
+```
+
+### Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The app reloads automatically on file changes.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### SSR Build & Run
 
 ```bash
 ng build
+node dist/stream-vibe/server/server.mjs
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Project Structure
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
+```
+src/
+├── app/
+│   ├── core/
+│   │   ├── auth/          # Firebase auth service
+│   │   ├── constants/     # Static data (pricing, nav, FAQ, etc.)
+│   │   ├── guards/        # Auth & redirect route guards
+│   │   └── services/      # Modal, movie services
+│   ├── features/
+│   │   ├── auth/          # Login & register components
+│   │   ├── home/          # Landing / home page
+│   │   ├── movies/        # Movies listing page
+│   │   ├── shows/         # TV shows listing page
+│   │   ├── subscription/  # Pricing / plans page
+│   │   └── support/       # Support & FAQ page
+│   ├── layout/
+│   │   ├── header/
+│   │   └── footer/
+│   └── shared/
+│       ├── components/    # Reusable UI cards and sections
+│       └── interfaces/    # TypeScript interfaces
+└── environments/
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Scripts
 
-```bash
-ng e2e
-```
+| Command         | Description                |
+| --------------- | -------------------------- |
+| `npm start`     | Start dev server           |
+| `npm run build` | Production build           |
+| `npm test`      | Run unit tests with Vitest |
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## License
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is open-source and available under the [MIT License](LICENSE).

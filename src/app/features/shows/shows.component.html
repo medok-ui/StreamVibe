@@ -1,0 +1,175 @@
+<app-header />
+
+<main>
+  <section class="shows-section container">
+    <div class="shows-hero">
+      <div class="shows-hero-content">
+        <h2 class="shows-title">{{ movie()?.title }}</h2>
+        <p class="shows-hero-description">{{ movie()?.description }}</p>
+        <div class="shows-btns">
+          <button appRedButton><img src="/assets/svg/play.svg" alt="play" /> Play Now</button>
+          <button class="shows-btn"><img src="/assets/svg/plus.svg" alt="plus" /></button>
+          <button class="shows-btn"><img src="/assets/svg/like.svg" alt="like" /></button>
+          <button class="shows-btn"><img src="/assets/svg/sound.svg" alt="sound" /></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="shows-description-section container">
+    <div class="shows-section-wrapper">
+      <div class="shows-section-left">
+        <div class="shows-description">
+          <h4 class="shows-description-title">Description</h4>
+          <p class="shows-description-text">{{ movie()?.description }}</p>
+        </div>
+        <div class="shows-reviews">
+          <div class="shows-reviews-head">
+            <h4 class="shows-reviews-title">Reviews</h4>
+            <button
+              (click)="onAddCardReview()"
+              [class.show]="modalService.isAddReview()"
+              class="shows-reviews-add-review"
+            >
+              <img src="/assets/svg/plus.svg" alt="plus" />
+              Add Your Review
+            </button>
+          </div>
+          <div class="shows-reviews-content">
+            <ul
+              #slider
+              class="shows-reviews-list"
+              [style.transform]="sliderTransform()"
+            >
+              @for (review of reviews(); track review.id) {
+                <li class="shows-reviews-item">
+                  <app-reviews-card [reviewData]="review" />
+                </li>
+              }
+            </ul>
+
+            <div class="shows-reviews-slider">
+              <button (click)="onPrev()" class="shows-reviews-slider-btn">
+                <img src="/assets/svg/arrow-left.svg" alt="arrow left" />
+              </button>
+              <ul class="indicators">
+                @for (step of reviewSteps(); track $index) {
+                  <li class="indicator" [class.active]="reviewStep() === step"></li>
+                }
+              </ul>
+              <button (click)="onNext()" class="shows-reviews-slider-btn">
+                <img src="/assets/svg/arrow-right.svg" alt="arrow right" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shows-section-right">
+        <div class="shows-info">
+          <div class="shows-info-date">
+            <h5 class="shows-info-date-title">
+              <img src="/assets/svg/icon-info-film/released-year.svg" alt="released-year" />
+              Released Year
+            </h5>
+            <span>{{ movie()?.released_year }}</span>
+          </div>
+          <div class="shows-info-available-languages">
+            <h5 class="shows-info-available-title">
+              <img
+                src="/assets/svg/icon-info-film/available-languages.svg"
+                alt="available-languages"
+              />
+              Available Languages
+            </h5>
+            <ul class="shows-info-available-list">
+              @for (item of movie()?.languages; track $index) {
+                <li class="shows-info-available-item">{{ item }}</li>
+              }
+            </ul>
+          </div>
+          <div class="shows-info-rating">
+            <h5 class="shows-info-rating-title">
+              <img src="/assets/svg/icon-info-film/ratings.svg" alt="ratings" />
+              Ratings
+            </h5>
+            <div class="shows-info-ratings">
+              <div class="rating-imdb">
+                <span class="rating-title">IMDb</span>
+                <div class="rating-star">
+                  <ul class="rating-star-list">
+                    @for (star of getStars(movie()?.ratings?.imdb_stars); track $index) {
+                      <li class="rating-star-item">
+                        <img src="/assets/svg/Shape-full.svg" alt="star" />
+                      </li>
+                    }
+                  </ul>
+                  {{ movie()?.ratings?.imdb }}
+                </div>
+              </div>
+              <div class="rating-steam-vibe">
+                <span class="rating-title">Streamvibe</span>
+                <div class="rating-star">
+                  <ul class="rating-star-list">
+                    @for (star of getStars(movie()?.ratings?.streamvibe_stars); track $index) {
+                      <li class="rating-star-item">
+                        <img src="/assets/svg/Shape-full.svg" alt="star" />
+                      </li>
+                    }
+                  </ul>
+                  {{ movie()?.ratings?.streamvibe }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shows-info-genres">
+            <h5 class="shows-info-genres-title">
+              <img src="/assets/svg/icon-info-film/gernes.svg" alt="Genres" />
+              Genres
+            </h5>
+            <div class="shows-info-genres-content">
+              <ul class="shows-info-genres-list">
+                @for (genre of movie()?.genres; track $index) {
+                  <li class="shows-info-Genres-item">{{ genre }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="shows-info-director">
+            <h5 class="shows-info-director-title">Director</h5>
+            <div class="shows-info-director-content">
+              <img
+                class="shows-info-director-image"
+                [src]="movie()?.director?.image"
+                [alt]="movie()?.director?.name"
+              />
+              <div class="shows-info-director-details">
+                <span class="shows-info-director-name">{{ movie()?.director?.name }}</span>
+                <span class="shows-info-director-location">{{ movie()?.director?.location }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="shows-info-music">
+            <h5 class="shows-info-music-title">Music</h5>
+            <div class="shows-info-music-content">
+              <img
+                class="shows-info-music-image"
+                [src]="movie()?.music?.image"
+                [alt]="movie()?.music?.name"
+              />
+              <div class="shows-info-music-details">
+                <span class="shows-info-music-name">{{ movie()?.music?.name }}</span>
+                <span class="shows-info-music-location">{{ movie()?.music?.location }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <app-cta-section />
+</main>
+<app-footer />
+
+@if (modalService.isActiveModal()) {
+  <app-review-modal />
+}

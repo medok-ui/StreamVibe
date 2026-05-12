@@ -1,0 +1,108 @@
+<div class="modal">
+  <div class="modal-head">
+    <h3 class="modal-title">Add your review</h3>
+    <button (click)="onCloseModal()" class="modal-close">X</button>
+  </div>
+  <div class="modal-preview" [class.spoiler]="isSpoiler()">
+    <div class="modal-preview-head">
+      <div class="modal-preview-user-info">
+        <span class="user-name">{{ userName() === '' ? 'Your Name' : userName() }}</span>
+        <span class="user-location">{{
+          userLocation() === '' ? 'City, Country' : userLocation()
+        }}</span>
+      </div>
+      <div class="modal-preview-star">
+        <ul class="modal-preview-star-list">
+          @for (star of stars(); track star) {
+            <li [class.active]="star <= selectedStars()" class="modal-preview-star-item">
+              <svg class="card-star" viewBox="0 0 24 24">
+                <path
+                  d="M12 2l2.9 5.9L22 9.1l-5 4.9 1.2 6.9L12 17.8l-6.2 3.1L7 14 2 9.1l7.1-1.2z"
+                  fill="#333"
+                  stroke="#444"
+                  stroke-width="0.5"
+                ></path>
+              </svg>
+            </li>
+          }
+        </ul>
+        {{ selectedRating() }}
+      </div>
+    </div>
+    <p class="modal-preview-text" [class.placeholder]="reviewText() === ''">
+      {{ reviewText() === '' ? 'Your review will appear here…' : reviewText() }}
+    </p>
+  </div>
+  <form [formGroup]="form" class="modal-form">
+    <div class="modal-user-info">
+      <label class="modal-label"
+        >Your name
+        <input
+          formControlName="userName"
+          maxlength="25"
+          class="input-user"
+          type="text"
+          placeholder="Victor Kimani"
+        />
+      </label>
+      <label class="modal-label"
+        >Location
+        <input
+          formControlName="userLocation"
+          class="input-user"
+          maxlength="30"
+          type="text"
+          placeholder="Nairobi, Kenya"
+        />
+      </label>
+    </div>
+    <div class="field">
+      <label class="modal-label"
+        >Rating
+
+        <ul class="field-stars-list">
+          @for (star of stars(); track star) {
+            <li
+              class="field-star-item"
+              [class.active]="star <= selectedStars()"
+              (click)="setRating(star)"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  id="r1"
+                  d="M12 2l2.9 5.9L22 9.1l-5 4.9 1.2 6.9L12 17.8l-6.2 3.1L7 14 2 9.1l7.1-1.2z"
+                  fill="#333"
+                  stroke="#444"
+                  stroke-width="0.5"
+                />
+              </svg>
+            </li>
+          }
+          <span class="field-star-text">{{ selectedHintStar() }}</span>
+        </ul>
+      </label>
+    </div>
+    <div class="review">
+      <label class="modal-label">
+        Review
+        <div class="modal-review-grid">
+          <textarea
+            formControlName="reviewText"
+            class="modal-review"
+            maxlength="200"
+            placeholder="Share what you thought about this movie…"
+          ></textarea>
+          <span>{{ reviewText()!.length }}/200</span>
+        </div>
+      </label>
+    </div>
+    <div class="spoiler-row">
+      <div class="spoiler-toggle" [class.on]="isSpoiler()" (click)="onSpoiler()"></div>
+      <span class="toggle-label">This review contains spoilers</span>
+    </div>
+    <div class="footer-row">
+      <button (click)="onReset()" class="footer-btn footer-btn-cancel">Cancel</button>
+      <button (click)="onSubmit()" class="footer-btn footer-btn-submit">Submit review</button>
+    </div>
+  </form>
+</div>

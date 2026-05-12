@@ -1,0 +1,17 @@
+<div [routerLink]="['/movies/shows', movies().id]" class="recommendation-card">
+  <div class="recommendation-cover">
+    <img class="recommendation-img" [src]="movies().poster" [alt]="movies().title" />
+  </div>
+  <div class="recommendation-info">
+    <div class="recommendation-time">
+      <img src="/assets/svg/time.svg" alt="time" />
+      {{ movies().duration }}
+    </div>
+    <div class="recommendation-rating">
+      @for (star of setMovieStars(movies()); track $index) {
+        <img src="/assets/svg/Shape-full.svg" alt="star" />
+      }
+      {{ movies().rating_count }}
+    </div>
+  </div>
+</div>

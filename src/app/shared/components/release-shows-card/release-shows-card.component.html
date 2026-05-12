@@ -1,0 +1,13 @@
+<div [routerLink]="['/movies/shows', movies().id]" class="trending-shows-card">
+  <div class="trending-shows-card-cover">
+    <img class="trending-shows-card-img" [src]="movies().poster" [alt]="movies().title" />
+  </div>
+  <div class="trending-shows-card-info">
+    <div class="trending-shows-card-time">
+      <img src="/assets/svg/time.svg" alt="time" />{{ movies().duration }}
+    </div>
+    <div class="trending-shows-card-season">
+      <img src="/assets/svg/seasons.svg" alt="seasons " />{{ movies().seasons }}
+    </div>
+  </div>
+</div>

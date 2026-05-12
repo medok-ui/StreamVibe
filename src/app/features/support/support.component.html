@@ -1,0 +1,76 @@
+<app-header />
+
+<main class="main">
+  <section class="support-section container">
+    <div class="support-grid">
+      <div class="support-info">
+        <h2 class="support-title">Welcome to our support page!</h2>
+        <p class="support-description">
+          We're here to help you with any problems you may be having with our product.
+        </p>
+        <div class="support-cover"></div>
+      </div>
+      <div class="support-form">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+          <div class="user-name">
+            <label class="user-info-input"
+              >First Name
+              <input
+                formControlName="firstName"
+                class="user-input"
+                type="text"
+                placeholder="Enter First Name"
+            /></label>
+            <label class="user-info-input"
+              >Last Name
+              <input
+                formControlName="lastName"
+                class="user-input"
+                type="text"
+                placeholder="Enter Last Name"
+            /></label>
+          </div>
+          <div class="user-info">
+            <label class="user-info-input"
+              >Email
+              <input
+                formControlName="email"
+                class="user-input"
+                type="text"
+                placeholder="Enter your Email"
+            /></label>
+            <label class="user-info-input"
+              >Phone Number
+              <input
+                formControlName="number"
+                class="user-input"
+                type="number"
+                placeholder="Enter Phone Number"
+            /></label>
+          </div>
+          <div class="user-problem-input">
+            <label class="user-info-input">
+              Message
+              <textarea
+                formControlName="message"
+                class="user-info-description"
+                placeholder="Enter your Message"
+              ></textarea>
+            </label>
+          </div>
+          <div class="user-confirm-form">
+            <label class="confirm-label">
+              <input formControlName="checkbox" type="checkbox" class="confirm-input" />
+              I agree with Terms of Use and Privacy Policy
+            </label>
+            <button appRedButton>Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <app-faq-section />
+  <app-cta-section />
+</main>
+<app-footer />

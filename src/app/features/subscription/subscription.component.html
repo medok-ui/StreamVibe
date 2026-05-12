@@ -1,0 +1,36 @@
+<app-header />
+
+<main class="main">
+  <app-tariffs-section />
+
+  <section class="tariffs-plan container">
+    <h2 class="tariffs-plan-title">Compare our plans and find the right one for you</h2>
+    <p class="tariffs-plan-description">
+      StreamVibe offers three different plans to fit your needs: Basic, Standard, and Premium.
+      Compare the features of each plan and choose the one that's right for you.
+    </p>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th class="pricing-table-title">Features</th>
+          <th class="pricing-table-title">Basic</th>
+          <th class="pricing-table-title">Standard <span class="badge">Popular</span></th>
+          <th class="pricing-table-title">Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of tariffPlans(); track $index) {
+          <tr>
+            <td class="feature-label">{{ item.featureName }}</td>
+            <td class="feature-label">{{ item.basic }}</td>
+            <td class="feature-label">{{ item.standard }}</td>
+            <td class="feature-label">{{ item.premium }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <app-cta-section />
+</main>
+<app-footer />

@@ -1,0 +1,185 @@
+.tariffs-section {
+  padding-top: 150px;
+}
+
+.tariffs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 80px;
+}
+
+.tariffs-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 150%;
+  color: var(--absolute-white);
+
+  margin-bottom: 14px;
+}
+
+.tariffs-description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--grey-60);
+
+  margin-bottom: 80px;
+}
+
+.billing-period {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  border: 1px solid var(--black-15);
+  border-radius: 10px;
+  padding: 10px;
+  width: 237px;
+  height: 75px;
+
+  background: var(--black-06);
+}
+
+.billing-period-btn {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--grey-60);
+  width: 118px;
+  height: 55px;
+  border-radius: 10px;
+  padding: 14px 24px;
+
+  &:hover {
+    background: var(--black-10);
+    opacity: 0.7;
+  }
+
+  &.active {
+    background: var(--black-12);
+  }
+}
+
+.tariffs-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap !important;
+  align-items: center;
+}
+
+@media (max-width: 1280px) {
+  .tariffs-section {
+    padding-top: 120px;
+  }
+
+  .tariffs-title {
+    font-size: 32px;
+  }
+
+  .tariffs-description {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .tariffs-head {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tariffs-section {
+    padding-top: 100px;
+  }
+
+  .tariffs-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .tariffs-title {
+    font-size: 28px;
+  }
+
+  .tariffs-description {
+    font-size: 15px;
+  }
+
+  .tariffs-list {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .tariffs-section {
+    padding-top: 80px;
+  }
+
+  .tariffs-head {
+    margin-bottom: 36px;
+    gap: 20px;
+  }
+
+  .tariffs-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .tariffs-description {
+    font-size: 14px;
+  }
+
+  .billing-period {
+    width: 240px;
+    height: 64px;
+  }
+
+  .billing-period-btn {
+    font-size: 16px;
+    width: 110px;
+    height: 46px;
+  }
+
+  .tariffs-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tariffs-section {
+    padding-top: 60px;
+  }
+
+  .tariffs-title {
+    font-size: 20px;
+  }
+
+  .tariffs-description {
+    font-size: 13px;
+  }
+
+  .billing-period {
+    width: 190px;
+    height: 58px;
+    padding: 8px;
+  }
+
+  .billing-period-btn {
+    font-size: 14px;
+    padding: 10px 17px;
+
+    width: 88px;
+    height: 40px;
+  }
+}

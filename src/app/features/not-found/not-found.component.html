@@ -1,0 +1,31 @@
+<main class="main">
+  <div class="bg-glow"></div>
+  <div class="noise-lines"></div>
+  <section class="not-found-section">
+    <ul class="film-strip">
+      @for (item of filmStripItems(); track $index) {
+        <li class="film-strip__item" [class.active]="item === activeFrame()">{{ item }}</li>
+      }
+    </ul>
+    <div class="not-found-message">
+      <h1 class="not-found-message__title">4<span class="not-found-message__span">0</span>4</h1>
+      <span class="not-found-message__subtitle">This page didn't make the cut</span>
+      <p class="not-found-message__description">
+        Looks like the page you're looking for has been removed, renamed, or is temporarily
+        unavailable.
+      </p>
+    </div>
+    <div class="buttons">
+      <a routerLink="/home" class="button primary">Back to Home </a>
+      <a routerLink="/support" class="button secondary">Contact Support</a>
+    </div>
+    <div class="not-found-suggestions">
+      <span class="not-found-subtitle">You might enjoy</span>
+      <ul class="not-found-suggestions-list">
+        @for (suggestion of notFoundSuggestions(); track $index) {
+          <li routerLink="/movies" class="not-found-suggestion-item">{{ suggestion }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+</main>

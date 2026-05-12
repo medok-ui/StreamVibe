@@ -1,0 +1,267 @@
+.auth-panel {
+  width: 500px;
+}
+
+.auth-panel__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.auth-link {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+
+  .auth-link__text {
+    color: #e50000;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.auth-google {
+  margin-top: 36px;
+}
+
+.auth-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px;
+  background: #181818;
+  border: 1px solid #222;
+  border-radius: 12px;
+  color: #ccc;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+}
+.auth-google-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 36px 0;
+
+  font-size: 12px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #222;
+  }
+}
+
+.auth-form {
+  margin-top: 36px;
+}
+
+.user-info-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.user-name-field,
+.password-field,
+.email-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.field-icon,
+.eye-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9e9e9e;
+}
+.field-icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  color: #444;
+  pointer-events: none;
+}
+.eye-btn {
+  position: absolute;
+  right: 8px;
+  padding: 4px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.auth-form__input {
+  width: 100%;
+  background: #181818;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 14px 40px 14px 46px;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    box-shadow 0.25s;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: #e50000;
+    background: #1a1a1a;
+    box-shadow: 0 0 0 1px #e50000;
+  }
+}
+
+.auth-submit-btn {
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  height: 55px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.auth-form__disclaimer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #444;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.email-field svg {
+  fill: none !important;
+}
+.password-field svg {
+  fill: none !important;
+  display: block;
+}
+
+.auth-google-btn-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  asl-google-signin-button {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    iframe {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+$error-red: #ff3333;
+$error-glow: rgba(255, 51, 51, 0.15);
+$dark-bg: #141414;
+$error-bg-grad: linear-gradient(180deg, $dark-bg 0%, #1a0a0a 100%);
+
+.auth-form__input.ng-invalid.ng-touched {
+  border-color: $error-red !important;
+  background: $error-bg-grad !important;
+  box-shadow: 0 0 12px $error-glow;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::placeholder {
+    color: rgba($error-red, 0.6);
+  }
+
+  &:focus {
+    border-color: #ff0000 !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
+    outline: none;
+  }
+}
+
+.user-name-field,
+.email-field,
+.password-field {
+  position: relative;
+  transition: margin-bottom 0.3s;
+
+  &:has(.ng-invalid.ng-touched) {
+    margin-bottom: 24px;
+
+    &::after {
+      content: 'Required or Invalid Format';
+      position: absolute;
+      bottom: -20px;
+      right: 4px;
+      font-size: 11px;
+      color: $error-red;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: error-slide-in 0.3s ease-out;
+    }
+
+    .field-icon {
+      color: $error-red;
+      opacity: 0.7;
+    }
+  }
+}
+
+.password-field:has(.ng-invalid.ng-touched) .auth-form__input {
+  outline: 2px solid rgba($error-red, 0.3);
+  outline-offset: 1px;
+}
+
+@keyframes error-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}

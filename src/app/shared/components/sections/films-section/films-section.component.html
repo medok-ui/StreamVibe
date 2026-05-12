@@ -1,0 +1,88 @@
+<section class="explore-categories-section">
+  <div class="container">
+    <div class="explore-categories-head">
+      <div class="explore-categories-info">
+        <h2 class="explore-categories-title">{{ filmsTitleSection() }}</h2>
+        <span class="explore-categories-description">{{ filmsDescriptionSection() }}</span>
+      </div>
+      <div class="slider-control">
+        <button class="slider-btn" (click)="onPrev()">
+          <img src="/assets/svg/arrow-left.svg" alt="Previous" />
+        </button>
+        <ul class="slider-indicators">
+          @for (step of steps(); track step) {
+            <li class="indicator-item">
+              <div class="indicator" [class.active]="currentStep() === step"></div>
+            </li>
+          }
+        </ul>
+        <button class="slider-btn" (click)="onNext()">
+          <img src="/assets/svg/arrow-right.svg" alt="Next" />
+        </button>
+      </div>
+    </div>
+    <div class="explore-categories-content">
+      @if (filmsCategorySection() === 'default') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (category of categoryCard(); track $index) {
+            <li class="explore-categories-item">
+              <app-category-card
+                [categoryName]="category.name"
+                [categoryCardImg]="category.image"
+              />
+            </li>
+          }
+        </ul>
+      }
+      @if (filmsCategorySection() === 'trending-now') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (movie of movieTrendingDB(); track movie.id) {
+            <li class="explore-categories-item">
+              <app-trending-card [movie]="movie" />
+            </li>
+          }
+        </ul>
+      }
+
+      @if (filmsCategorySection() === 'new-releases') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (movie of movieReleasesDB(); track movie.id) {
+            <li class="explore-categories-item">
+              <app-new-release-card [movies]="movie" />
+            </li>
+          }
+        </ul>
+      }
+
+      @if (filmsCategorySection() === 'recommendation') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (movie of movieRecommendationsDB(); track movie.id) {
+            <li class="explore-categories-item">
+              <app-recommendation-card [movies]="movie" />
+            </li>
+          }
+        </ul>
+      }
+
+      @if (filmsCategorySection() === 'trending-shows') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (movie of movieTrendingShowsDB(); track movie.id) {
+            <li class="explore-categories-item">
+              <app-trending-shows-card [movies]="movie" />
+            </li>
+          }
+        </ul>
+      }
+
+      @if (filmsCategorySection() === 'new-release-shows') {
+        <ul #slider class="explore-categories-list" [style.transform]="sliderTransform()">
+          @for (movie of movieNewReleasesShowsDB(); track movie.id) {
+            <li class="explore-categories-item">
+              <app-release-shows-card [movies]="movie" />
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</section>

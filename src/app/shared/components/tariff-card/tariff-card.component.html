@@ -1,0 +1,13 @@
+<div class="tariff-card">
+  <h3 class="tariff-title">{{ tariffName() }}</h3>
+  <p class="tariff-description">
+    {{ tariffDescription() }}
+  </p>
+  <div class="tariff-price">
+    ${{ tariffPrice() }} <span class="tariff-time">/{{ tariffDate() }}</span>
+  </div>
+  <div class="tariff-buttons">
+    <button routerLink="/subscriptions" class="tariff-button start-free">Start Free Trial</button>
+    <button routerLink="/subscriptions" appRedButton>Choose Plan</button>
+  </div>
+</div>

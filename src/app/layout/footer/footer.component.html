@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <nav class="footer-nav">
+        @for (column of navigationColumns(); track column.title) {
+          <div class="footer-col">
+            <h4 class="footer-col-title">{{ column.title }}</h4>
+            <ul class="footer-col-list">
+              @for (link of column.links; track link.label) {
+                <li>
+                  <a [routerLink]="link.routerLink" class="footer-link">
+                    {{ link.label }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </nav>
+
+      <div class="footer-socials">
+        <h4 class="footer-col-title">Connect With Us</h4>
+        <div class="social-icons">
+          @for (social of socialLinks(); track social.icon) {
+            <a [href]="social.url" target="_blank" class="social-btn">
+              <img [src]="social.icon" alt="social" />
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+    <hr class="hr-footer" />
+    <div class="politics">
+      <p class="politics-text">@2023 streamvib, All Rights Reserved</p>
+      <ul class="politics-list">
+        <li>
+          <a class="politics-link" href="">Terms of Use</a>
+        </li>
+        <li>
+          <a class="politics-link" href="">Privacy Policy</a>
+        </li>
+        <li>
+          <a class="politics-link" href="">Cookie Policy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,167 @@
+.tariffs-plan {
+  margin-top: 150px;
+}
+
+.tariffs-plan-title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 150%;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.tariffs-plan-description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999;
+
+  margin-bottom: 80px;
+}
+
+.pricing-table {
+  border: 1px solid #262626;
+  border-radius: 12px;
+  width: 1566px;
+  height: 1014px;
+}
+
+.pricing-table-title {
+  text-align: left;
+  background: #0f0f0f;
+  border-bottom: 1px solid #262626;
+  border-left: 1px solid #262626;
+  padding: 30px;
+  width: 399px;
+  height: 90px;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.badge {
+  border-radius: 2px;
+  padding: 6px 10px;
+  background: #e50000;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.feature-label {
+  padding: 30px;
+  width: 399px;
+  height: 87px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999;
+
+  border-bottom: 1px solid #262626;
+  border-left: 1px solid #262626;
+}
+
+@media (max-width: 1600px) {
+  .pricing-table {
+    width: 100%;
+    height: auto;
+  }
+
+  .pricing-table-title,
+  .feature-label {
+    width: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tariffs-plan {
+    margin-top: 100px;
+  }
+
+  .tariffs-plan-title {
+    font-size: 36px;
+  }
+
+  .tariffs-plan-description {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+
+  .pricing-table-title,
+  .feature-label {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tariffs-plan {
+    margin-top: 60px;
+  }
+
+  .tariffs-plan-title {
+    font-size: 28px;
+  }
+
+  .tariffs-plan-description {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .pricing-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-table-title,
+  .feature-label {
+    padding: 16px;
+    font-size: 14px;
+    min-width: 140px;
+    height: auto;
+  }
+
+  .pricing-table-title {
+    font-size: 15px;
+  }
+
+  .badge {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tariffs-plan-title {
+    font-size: 22px;
+  }
+
+  .tariffs-plan-description {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .pricing-table-title,
+  .feature-label {
+    padding: 12px;
+    font-size: 13px;
+    min-width: 110px;
+  }
+}

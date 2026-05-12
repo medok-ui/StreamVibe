@@ -1,0 +1,29 @@
+<main class="main">
+  <section class="hero-section">
+    <app-header />
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">The Best Streaming Experience</h1>
+        <p class="hero-description">
+          StreamVibe is the best streaming experience for watching your favorite movies and shows on
+          demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content,
+          including the latest blockbusters, classic movies, popular TV shows, and more. You can
+          also create your own watchlists, so you can easily find the content you want to watch.
+        </p>
+        <button routerLink="/subscription" appRedButton>
+          <img src="/assets/svg/play.svg" alt="play" /> Start Watching Now
+        </button>
+      </div>
+    </div>
+  </section>
+  <app-films-section
+    filmsTitleSection="Explore our wide variety of categories"
+    filmsDescriptionSection="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
+    filmsCategorySection="default"
+  />
+  <app-devices-section />
+  <app-faq-section />
+  <app-tariffs-section />
+  <app-cta-section />
+</main>
+<app-footer />

@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="container">
+    <div class="header-grid">
+      <div class="logo">
+        <a routerLink="/home">
+          <img src="/assets/svg/logo.svg" alt="logo" />
+        </a>
+      </div>
+      <nav class="navigation">
+        <ul class="navigation-list">
+          @for (nav of navLinks(); track $index) {
+            <!-- routerLinkActive - for active link styling -->
+            <li
+              (click)="onNavLink(nav.label)"
+              class="navigation-item"
+              [routerLink]="nav.path"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a>{{ nav.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+      <div class="buttons">
+        <button class="button"><img src="/assets/svg/search.svg" alt="search-btn" /></button>
+        <button class="button"><img src="/assets/svg/bells.svg" alt="bells-btn" /></button>
+      </div>
+      <button (click)="onMenu()" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+@if (isMenu()) {
+  <div class="mobile-menu">
+    <ul class="mobile-menu-list">
+      @for (nav of navLinks(); track $index) {
+        <li class="mobile-menu-item" [routerLink]="nav.path">
+          <a>{{ nav.label }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+}

@@ -1,0 +1,45 @@
+<section class="tariffs-section">
+  <div class="container">
+    <div class="tariffs-head">
+      <div class="tariffs-info">
+        <h2 class="tariffs-title">Choose the plan that's right for you</h2>
+        <span class="tariffs-description">
+          Join StreamVibe and select from our flexible subscription options tailored to suit your
+          viewing preferences. Get ready for non-stop entertainment!
+        </span>
+      </div>
+      <div class="billing-period">
+        <button
+          (click)="onBillingPeriodMonthly()"
+          [class.active]="isYearly() === 'Monthly'"
+          class="billing-period-btn active"
+          [disabled]="isClickMonthly()"
+        >
+          Monthly
+        </button>
+        <button
+          (click)="onBillingPeriodYearly()"
+          [class.active]="isYearly() === 'Yearly'"
+          class="billing-period-btn"
+          [disabled]="isClickYearly()"
+        >
+          Yearly
+        </button>
+      </div>
+    </div>
+    <div class="billing-content">
+      <ul class="tariffs-list">
+        @for (item of pricingPlans(); track item.id) {
+          <li class="tariff-item">
+            <app-tariff-card
+              [tariffName]="item.title"
+              [tariffDescription]="item.description"
+              [tariffPrice]="item.price.toString()"
+              [tariffDate]="isYearly()"
+            />
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

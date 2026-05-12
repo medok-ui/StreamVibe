@@ -1,0 +1,14 @@
+<div class="faq-card">
+  <div class="faq-head">
+    <div class="faq-head-wrapper">
+      <div class="faq-id">{{ faqId() }}</div>
+      <h3 class="faq-title">{{ faqQuestion() }}</h3>
+    </div>
+    <button [class.active]="isFaq()" (click)="onFaq()" class="faq-btn">
+      <span class="icon"></span>
+    </button>
+  </div>
+  <div class="faq-info">
+    <span class="faq-response" [class.active]="isFaq()">{{ faqAnswer() }} </span>
+  </div>
+</div>

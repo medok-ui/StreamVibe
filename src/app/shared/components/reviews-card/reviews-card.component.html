@@ -1,0 +1,17 @@
+<div class="reviews-card">
+  <div class="reviews-card-head">
+    <div class="reviews-card-info-user">
+      <span class="reviews-card-user-name">{{ reviewData().author }}</span>
+      <span class="reviews-card-user-location">{{ reviewData().location }}</span>
+    </div>
+    <div class="reviews-card-rating">
+      <ul class="reviews-card-stars">
+        @for (star of countStars(reviewData()); track $index) {
+          <li class="reviews-card-star"><img src="/assets/svg/Shape-full.svg" alt="star" /></li>
+        }
+      </ul>
+      {{ reviewData().rating }}
+    </div>
+  </div>
+  <p class="reviews-card-content">{{ reviewData().comment }}</p>
+</div>

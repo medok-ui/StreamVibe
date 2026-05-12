@@ -1,0 +1,8 @@
+<div [routerLink]="['/movies/shows', movies().id]" class="new-release-card">
+  <div class="new-release-cover">
+    <img class="new-release-img" [src]="movies().poster" [alt]="movies().title" />
+  </div>
+  <div class="new-release-info">
+    Released at <span class="release-date">{{ movies().released_year }}</span>
+  </div>
+</div>

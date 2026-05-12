@@ -1,0 +1,126 @@
+.trending-shows-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 20px;
+  width: 359px;
+  height: 444px;
+
+  background: #1a1a1a;
+
+  &:hover {
+    background: var(--black-15);
+    border-color: var(--black-20);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+
+    .trending-shows-card-img {
+      filter: grayscale(0) brightness(1.1);
+      transform: scale(1.05);
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: all 0.1s ease;
+  }
+}
+
+.trending-shows-card-cover {
+  border-radius: 12px;
+  width: 319px;
+  height: 348px;
+}
+
+.trending-shows-card-img {
+  border-radius: 12px;
+  width: 319px;
+  height: 348px;
+}
+
+.trending-shows-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trending-shows-card-time,
+.trending-shows-card-season {
+  border: 1px solid #262626;
+  border-radius: 51px;
+  padding: 6px 10px 6px 6px;
+
+  background: #141414;
+
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #999;
+}
+
+@media (max-width: 1200px) {
+  .trending-shows-card {
+    width: 300px;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .trending-shows-card-cover,
+  .trending-shows-card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .trending-shows-card {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .trending-shows-card-cover,
+  .trending-shows-card-img {
+    height: 320px;
+  }
+  .trending-shows-card-info {
+    gap: 10px;
+  }
+  .trending-shows-card-time,
+  .trending-shows-card-season {
+    font-size: 14px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trending-shows-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .trending-shows-card-cover,
+  .trending-shows-card-img {
+    height: 240px;
+    border-radius: 8px;
+  }
+
+  .trending-shows-card-time,
+  .trending-shows-card-season {
+    font-size: 12px;
+    border-radius: 30px;
+  }
+  .trending-shows-card-time img,
+  .trending-shows-card-season img {
+    width: 16px;
+  }
+}

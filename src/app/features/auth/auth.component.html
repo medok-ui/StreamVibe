@@ -1,0 +1,64 @@
+<main class="auth-main">
+  <div class="auth-grid">
+    <div class="auth-left">
+      <h2 class="auth-logo"><img src="/assets/svg/logo.svg" alt="logo" /></h2>
+
+      <h1 class="auth-title">
+        Your world of <span class="auth-title__red">cinema</span>, unlimited.
+      </h1>
+      <p class="auth-description">
+        Thousands of movies and shows. Crystal-clear 4K. Download and watch anywhere. One
+        subscription, endless entertainment.
+      </p>
+
+      <ul class="achievements-list">
+        <li class="achievements-item">
+          <div class="achievements-card">
+            <span class="achievements-title">10K+</span>
+            <p class="achievements-text">Titles</p>
+          </div>
+        </li>
+        <li class="achievements-item">
+          <div class="achievements-card">
+            <span class="achievements-title">4K</span>
+            <p class="achievements-text">Ultra HD</p>
+          </div>
+        </li>
+        <li class="achievements-item">
+          <div class="achievements-card">
+            <span class="achievements-title">6</span>
+            <p class="achievements-text">Screens</p>
+          </div>
+        </li>
+      </ul>
+
+      <span class="auth-footer-text">© 2026 StreamVibe — All rights reserved</span>
+    </div>
+    <div class="auth-right">
+      <div class="auth-right__wrapper">
+        <div class="auth-right--navigation">
+          <a
+            class="navigation-btn"
+            routerLink="/auth/login"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Sign In
+          </a>
+          <a
+            class="navigation-btn"
+            routerLink="/auth/register"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Create Account
+          </a>
+        </div>
+
+        <!-- <app-login /> -->
+        <!-- <app-register /> -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,9 @@
+<a routerLink="/movies" class="category-card">
+  <div class="category-card-cover">
+    <img class="category-card-img" [src]="categoryCardImg()" [alt]="categoryName()" />
+  </div>
+  <div class="category-card-footer">
+    <h3 class="category-card-name">{{ categoryName() }}</h3>
+    <img src="/assets/svg/arrow-right.svg" alt="Go to Action" class="category-card-arrow" />
+  </div>
+</a>

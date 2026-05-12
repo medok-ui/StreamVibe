@@ -1,0 +1,15 @@
+# Build outputs
+dist/
+.angular/
+build/
+
+# Dependencies
+node_modules/
+
+# Auto-generated
+*.min.js
+*.min.css
+package-lock.json
+
+# Assets
+src/assets/

@@ -1,0 +1,24 @@
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-head">
+      <h2 class="faq-head-title">Frequently Asked Questions</h2>
+      <span class="faq-head-description"
+        >Got questions? We've got answers! Check out our FAQ section to find answers to the most
+        common questions about StreamVibe.</span
+      >
+    </div>
+    <div class="faq-content">
+      <ul class="faq-list">
+        @for (item of faqList(); track item.id) {
+          <li class="faq-item">
+            <app-faq-card
+              [faqId]="item.id"
+              [faqQuestion]="item.question"
+              [faqAnswer]="item.answer"
+            />
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

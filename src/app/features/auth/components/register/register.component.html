@@ -1,0 +1,129 @@
+<div class="auth-panel">
+  <h3 class="auth-panel__title">Start watching today</h3>
+  <span class="auth-link">
+    Already have an account? <a routerLink="/auth/login" class="auth-link__text">Sign in</a></span
+  >
+
+  <form [formGroup]="form" class="auth-form">
+    <div class="user-info-form">
+      <label class="auth-form__label">
+        First name
+        <div class="user-name-field">
+          <span class="field-icon">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </span>
+          <input
+            minlength="2"
+            formControlName="firstName"
+            class="auth-form__input"
+            type="text"
+            placeholder="Jordan"
+          /></div
+      ></label>
+      <label class="auth-form__label">
+        Last name
+        <div class="user-name-field">
+          <span class="field-icon">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </span>
+          <input
+            minlength="2"
+            formControlName="lastName"
+            class="auth-form__input"
+            type="text"
+            placeholder="Smith"
+          />
+        </div>
+      </label>
+    </div>
+    <label class="auth-form__label">
+      Email address
+      <div class="email-field">
+        <span class="field-icon">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </span>
+        <input
+          formControlName="email"
+          class="auth-form__input"
+          type="email"
+          placeholder="you@example.com"
+        />
+      </div>
+    </label>
+    <label class="auth-form__label">
+      Password
+      <div class="password-field">
+        <span class="field-icon">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </span>
+        <input
+          formControlName="password"
+          class="auth-form__input"
+          [type]="isPasswordVisible() ? 'text' : 'password'"
+          placeholder="••••••••"
+        />
+        <button (click)="onPassword()" type="button" class="eye-btn" aria-label="Toggle password">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+        </button>
+      </div>
+    </label>
+    <button (click)="onSubmit()" appRedButton class="auth-submit-btn">
+      Create Account — It's Free
+    </button>
+    <p class="auth-form__disclaimer">Free 7-day trial. Cancel anytime. No credit card required.</p>
+  </form>
+</div>

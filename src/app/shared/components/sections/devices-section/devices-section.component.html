@@ -1,0 +1,27 @@
+<section class="devices-section">
+  <div class="container">
+    <div class="devices-head">
+      <h2 class="devices-head-title">
+        We Provide you streaming experience across various devices.
+      </h2>
+      <span class="devices-head-description"
+        >With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our
+        platform is designed to be compatible with a wide range of <br />
+        devices, ensuring that you never miss a moment of entertainment.
+      </span>
+    </div>
+    <div class="devices-content">
+      <ul class="devices-list">
+        @for (item of deviceCard(); track item.id) {
+          <li class="devices-item">
+            <app-device-card
+              [deviceIcon]="item.iconPath"
+              [deviceName]="item.title"
+              [deviceDescription]="item.description"
+            />
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

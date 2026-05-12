@@ -1,0 +1,286 @@
+.footer {
+  margin-top: 150px;
+  padding: 100px 162px 50px;
+  background: #0f0f0f;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-nav {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 100px;
+}
+
+.footer-col-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.footer-col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-link {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: #fff;
+    transform: translateX(5px);
+  }
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-col-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.social-btn {
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 16px;
+  width: 56px;
+  height: 56px;
+
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #262626;
+    border-color: #e50000;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.hr-footer {
+  margin-top: 15px;
+  border: 1px solid #262626;
+}
+
+.politics {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.politics-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999;
+}
+
+.politics-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.politics-link {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #999;
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    padding: 80px 80px 50px;
+    margin-top: 120px;
+  }
+
+  .footer-nav {
+    width: 820px;
+  }
+
+  .footer-col-title {
+    font-size: 18px;
+  }
+
+  .footer-link,
+  .politics-text,
+  .politics-link {
+    font-size: 16px;
+  }
+
+  .politics-list {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 70px 40px 44px;
+    margin-top: 100px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .footer-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .footer-col {
+    margin-bottom: 0;
+    gap: 18px;
+  }
+
+  .footer-socials {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-col-title {
+    font-size: 17px;
+  }
+
+  .footer-link {
+    font-size: 15px;
+  }
+
+  .politics-text,
+  .politics-link {
+    font-size: 15px;
+  }
+
+  .politics-list {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 56px 28px 40px;
+    margin-top: 80px;
+  }
+
+  .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+
+  .footer-col {
+    gap: 14px;
+  }
+
+  .footer-socials {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+  .politics {
+    margin-top: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .politics-list {
+    gap: 20px;
+  }
+
+  .politics-text,
+  .politics-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 44px 20px 32px;
+    margin-top: 60px;
+  }
+
+  .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .footer-col-title {
+    font-size: 15px;
+  }
+
+  .footer-col-list {
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 13px;
+  }
+
+  .social-btn {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .politics-list {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .politics-text,
+  .politics-link {
+    font-size: 13px;
+  }
+}
