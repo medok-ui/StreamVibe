@@ -125,9 +125,3 @@ src/
 | `npm start`     | Start dev server           |
 | `npm run build` | Production build           |
 | `npm test`      | Run unit tests with Vitest |
-
----
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
