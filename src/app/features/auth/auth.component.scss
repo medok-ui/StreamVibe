@@ -118,3 +118,156 @@
   color: #fff;
   box-shadow: 0 0 0 1px #222;
 }
+
+@media (max-width: 1024px) {
+  .auth-left {
+    padding: 40px 40px;
+    flex: 1.1;
+  }
+
+  .auth-right {
+    padding: 40px 40px;
+    flex: 0.9;
+  }
+
+  .navigation-btn {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-grid {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .auth-left {
+    padding: 36px 24px 40px;
+    flex: none;
+  }
+
+  .auth-logo {
+    margin-bottom: 40px;
+  }
+
+  .auth-title {
+    font-size: clamp(32px, 7vw, 44px);
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .auth-description {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .achievements-list {
+    gap: 24px;
+  }
+
+  .achievements-title {
+    font-size: 24px;
+  }
+
+  .auth-footer-text {
+    display: none;
+  }
+
+  .auth-right {
+    flex: none;
+    padding: 40px 24px 56px;
+    align-items: flex-start;
+  }
+
+  .auth-right__wrapper {
+    width: 100%;
+  }
+
+  .auth-right--navigation {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .navigation-btn {
+    width: auto;
+    flex: 1;
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-left {
+    padding: 28px 20px 32px;
+  }
+
+  .auth-logo {
+    margin-bottom: 32px;
+  }
+
+  .auth-title {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .auth-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .achievements-list {
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .achievements-item {
+    flex: 1;
+    align-items: center;
+  }
+
+  .achievements-title {
+    font-size: 22px;
+  }
+
+  .achievements-text {
+    font-size: 11px;
+  }
+
+  .auth-right {
+    padding: 32px 20px 48px;
+  }
+
+  .auth-right--navigation {
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 28px;
+  }
+
+  .navigation-btn {
+    height: 42px;
+    font-size: 13px;
+    padding: 10px 6px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-left {
+    padding: 24px 16px 28px;
+  }
+
+  .auth-right {
+    padding: 28px 16px 40px;
+  }
+
+  .auth-title {
+    font-size: 26px;
+  }
+
+  .achievements-title {
+    font-size: 20px;
+  }
+}
