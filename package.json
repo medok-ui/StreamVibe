@@ -2,7 +2,7 @@
   "name": "stream-vibe",
   "version": "0.0.0",
   "type": "module",
-  "npmrc": "legacy-peer-deps=true"
+  "npmrc": "legacy-peer-deps=true",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
